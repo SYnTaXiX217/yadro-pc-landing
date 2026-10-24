@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ядро — сборка игровых ПК под ваш бюджет</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%234b3bff'/%3E%3Ccircle cx='16' cy='16' r='6' fill='white'/%3E%3C/svg%3E">
+  <meta name="description" content="Подбираем и собираем игровые компьютеры. Выберите бюджет — увидите сборку.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><i></i><i></i></div>
+
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Ядро, на главную" style="display:inline-flex;align-items:center;gap:10px">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="72 10" transform="rotate(-60 16 16)"/>
+        <circle cx="16" cy="16" r="5.5" fill="currentColor"/>
+      </svg>
+      Ядро
+    </a>
+    <nav>
+      <a href="#why">Почему мы</a>
+      <a href="#steps">Как работаем</a>
+      <a class="pill" href="#contact">Заказать</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>
+        <span class="line"><span>Скажите бюджет.</span></span>
+        <span class="line"><span>Получите сборку.</span></span>
+      </h1>
+      <p class="lead">Подбираем комплектующие под ваши игры, собираем, тестируем сутки и привозим готовый ПК.</p>
+
+      <div class="panel" aria-live="polite">
+        <div class="panel-main">
+          <div class="control">
+            <label for="budget">Бюджет</label>
+            <output id="budgetOut">100 000 ₽</output>
+            <input type="range" id="budget" min="50000" max="300000" step="10000" value="100000">
+          </div>
+          <div class="result">
+            <h2 id="tierName"></h2>
+            <p id="tierFps"></p>
+          </div>
+          <div class="orb" aria-hidden="true"></div>
+        </div>
+        <ul id="parts" class="parts"></ul>
+      </div>
+    </section>
+
+    <section class="statement reveal">
+      <p>Каждый компьютер работает под нагрузкой 24 часа до того, как попадёт к вам. Если что-то греется или шумит, мы меняем деталь, а не объясняем, почему так бывает.</p>
+    </section>
+
+    <section class="why" id="why">
+      <div class="grid3">
+        <article class="reveal"><h3>Гарантия 2 года</h3><p>Оформляем на всю сборку целиком, а не на отдельные детали.</p></article>
+        <article class="reveal"><h3>Цены в смете</h3><p>Видно стоимость каждой детали и нашей работы. Скрытых наценок нет.</p></article>
+        <article class="reveal"><h3>Аккуратная прокладка кабелей</h3><p>Кабели убраны, воздух идёт свободно, в корпус приятно смотреть.</p></article>
+      </div>
+    </section>
+
+    <section class="steps" id="steps">
+      <h2 class="reveal">Как мы работаем</h2>
+      <ol class="grid4">
+        <li class="reveal"><b>1</b><h3>Вы пишете</h3><p>Бюджет и игры, в которые играете. Достаточно сообщения в Telegram.</p></li>
+        <li class="reveal"><b>2</b><h3>Мы считаем</h3><p>Присылаем три варианта с разницей в FPS и цене.</p></li>
+        <li class="reveal"><b>3</b><h3>Собираем</h3><p>Сборка и тест занимают от трёх до пяти дней.</p></li>
+        <li class="reveal"><b>4</b><h3>Привозим</h3><p>Windows, драйверы и ваши игры уже установлены.</p></li>
+      </ol>
+    </section>
+
+    <section class="contact reveal" id="contact">
+      <h2>Получите смету сегодня</h2>
+      <form id="form" novalidate>
+        <input type="text" id="name" placeholder="Имя" required>
+        <input type="text" id="tg" placeholder="Telegram, например @nick" required>
+        <button class="pill pill-light" type="submit">Отправить заявку</button>
+      </form>
+      <p id="formMsg" class="form-msg" role="status"></p>
+    </section>
+  </main>
+
+  <footer><p>© 2026 Ядро. Учебный проект, компания вымышленная.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
